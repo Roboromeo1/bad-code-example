@@ -1,8 +1,9 @@
-import * as React from "react";
-import Form from "src/components/Form";
-import FilterSegment from "src/components/FilterSegment";
-import ListView from "src/components/ListView";
-import PropTypes from "prop-types";
+/* eslint-disable require-jsdoc */
+import * as React from 'react';
+import Form from 'src/components/Form';
+import FilterSegment from 'src/components/FilterSegment';
+import ListView from 'src/components/ListView';
+import PropTypes from 'prop-types';
 
 function TodoListComponent(params) {
   const {
@@ -11,7 +12,7 @@ function TodoListComponent(params) {
     toggleComplete,
     deleteTodo,
     onFilterChange,
-    currentFilter
+    currentFilter,
   } = params;
   return (
     <>
@@ -36,7 +37,7 @@ TodoListComponent.propTypes = {
   toggleComplete: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired,
   onFilterChange: PropTypes.func.isRequired,
-  currentFilter: PropTypes.string.isRequired
+  currentFilter: PropTypes.string.isRequired,
 };
 
 export default TodoListComponent;
