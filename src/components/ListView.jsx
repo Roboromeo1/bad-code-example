@@ -1,18 +1,19 @@
-import * as React from "react";
-import { Sheet, Table } from "@mui/joy";
+/* eslint-disable require-jsdoc */
+import * as React from 'react';
+import {Sheet, Table} from '@mui/joy';
 
-import Item from "src/components/Item";
-import PropTypes from "prop-types";
+import Item from 'src/components/Item';
+import PropTypes from 'prop-types';
 
-function ListView({ todos, filter, toggleComplete, deleteTodo }) {
+function ListView({todos, filter, toggleComplete, deleteTodo}) {
   let visibleTodos = [];
 
   switch (filter) {
-    case "Completed": {
+    case 'Completed': {
       visibleTodos = todos.filter((item) => item.completed);
       break;
     }
-    case "In progress": {
+    case 'In progress': {
       visibleTodos = todos.filter((item) => !item.completed);
       break;
     }
@@ -24,10 +25,10 @@ function ListView({ todos, filter, toggleComplete, deleteTodo }) {
     <Sheet
       variant="outlined"
       sx={{
-        width: "100%",
+        width: '100%',
         flex: 1,
-        overflow: "auto",
-        minHeight: 0
+        overflow: 'auto',
+        minHeight: 0,
       }}
     >
       <Table stickyHeader hoverRow>
@@ -52,7 +53,7 @@ ListView.propTypes = {
   todos: PropTypes.array.isRequired,
   filter: PropTypes.string.isRequired,
   toggleComplete: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired
+  deleteTodo: PropTypes.func.isRequired,
 };
 
 export default ListView;

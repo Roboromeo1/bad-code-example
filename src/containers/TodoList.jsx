@@ -1,7 +1,8 @@
-import * as React from "react";
-import actions from "src/redux/actions";
-import { useDispatch, useSelector } from "react-redux";
-import TodoListComponent from "src/components/TodoListComponent";
+/* eslint-disable require-jsdoc */
+import * as React from 'react';
+import actions from 'src/redux/actions';
+import {useDispatch, useSelector} from 'react-redux';
+import TodoListComponent from 'src/components/TodoListComponent';
 
 let idGenerator = 1;
 
@@ -15,7 +16,7 @@ function TodoList() {
     const newItem = {
       id: idGenerator,
       title,
-      completed: false
+      completed: false,
     };
     const newTodos = [...todos, newItem];
     dispatch(actions.setTodoList(newTodos));
@@ -27,7 +28,7 @@ function TodoList() {
       return;
     }
     const item = todos[itemIndex];
-    const updatedItem = { ...item, completed: !item.completed };
+    const updatedItem = {...item, completed: !item.completed};
     const newTodos = [...todos];
     newTodos.splice(itemIndex, 1, updatedItem);
     dispatch(actions.setTodoList(newTodos));
