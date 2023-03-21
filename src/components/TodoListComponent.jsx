@@ -1,5 +1,5 @@
-/* eslint-disable require-jsdoc */
 import * as React from 'react';
+import {Box} from '@mui/joy';
 import Form from 'src/components/Form';
 import FilterSegment from 'src/components/FilterSegment';
 import ListView from 'src/components/ListView';
@@ -15,7 +15,7 @@ function TodoListComponent(params) {
     currentFilter,
   } = params;
   return (
-    <>
+    <Box sx={{display: 'flex', flexDirection: 'column', height: '100%'}}>
       <Form addItem={addItem} />
       <FilterSegment
         onFilterChange={onFilterChange}
@@ -26,8 +26,9 @@ function TodoListComponent(params) {
         filter={currentFilter}
         toggleComplete={toggleComplete}
         deleteTodo={deleteTodo}
+        sx={{flex: 1, overflow: 'auto'}}
       />
-    </>
+    </Box>
   );
 }
 

@@ -1,5 +1,5 @@
-/* eslint-disable require-jsdoc */
 import * as React from 'react';
+import {Box, Grid} from '@mui/joy';
 import actions from 'src/redux/actions';
 import {useDispatch, useSelector} from 'react-redux';
 import TodoListComponent from 'src/components/TodoListComponent';
@@ -50,14 +50,28 @@ function TodoList() {
   };
 
   return (
-    <TodoListComponent
-      addItem={addItem}
-      todos={todos}
-      toggleComplete={toggleComplete}
-      deleteTodo={deleteTodo}
-      onFilterChange={onFilterChange}
-      currentFilter={filter}
-    />
+    <Box sx={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+      <Box sx={{flex: '0 0 auto'}}>
+        <TodoListComponent
+          addItem={addItem}
+          todos={todos}
+          toggleComplete={toggleComplete}
+          deleteTodo={deleteTodo}
+          onFilterChange={onFilterChange}
+          currentFilter={filter}
+        />
+      </Box>
+      <Box sx={{flex: '1 1 auto'}}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Box sx={{bgcolor: 'primary.main', height: '100%'}}></Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box sx={{bgcolor: 'secondary.main', height: '100%'}}></Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
 }
 
